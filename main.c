@@ -23,19 +23,19 @@ int main(int argc, char *argv[]) {
         execute_server(argv[2], argv[3]);
     }else{
         printf("Start as client\n");
-        //execute_client(argc, argv);
-        char *arr = malloc(1000*sizeof(char));
-        if (argc < 4) {
-       	   char *boilerplate = "/usr/bin/wget -P ./ -q -p --header=\"User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/8.0 Safari/600.1.17\" -e robots=off localhost:8085";
-       	   strcat(arr, boilerplate);
-       	   strcat(arr, argv[argc - 1]);
-    	   system(arr);
-    	} else {
-           char *boilerplate = "/usr/bin/wget -P ./ -q localhost:8085";
-           strcat(arr, boilerplate);
-       	   strcat(arr, argv[argc - 1]);
-    	   system(arr);
-        }
+        execute_client(argc, argv);
+//         char *arr = malloc(1000*sizeof(char));
+//         if (argc < 4) {
+//        	   char *boilerplate = "/usr/bin/wget -P ./ -q -p --header=\"User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/8.0 Safari/600.1.17\" -e robots=off localhost:8085";
+//        	   strcat(arr, boilerplate);
+//        	   strcat(arr, argv[argc - 1]);
+//     	   system(arr);
+//     	} else {
+//            char *boilerplate = "/usr/bin/wget -P ./ -q localhost:8085";
+//            strcat(arr, boilerplate);
+//        	   strcat(arr, argv[argc - 1]);
+//     	   system(arr);
+//         }
     }
 
     printf("Bye\n");
